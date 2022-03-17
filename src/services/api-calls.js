@@ -1,6 +1,10 @@
-const baseUrl = 'http://acnhapi.com/v1'
+const baseUrl = 'https://acnhapi.com/v1a'
 
-export function getFossils() {
+function getFossils() {
   return fetch(`${baseUrl}/fossils`)
   .then(res => res.json())
+}
+
+export {
+  getFossils
 }
