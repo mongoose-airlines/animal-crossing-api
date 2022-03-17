@@ -11,7 +11,12 @@ const SongList = (props) => {
   })
   return (
     <>
-      <h2>Song list component</h2>
+      <h2>Songs</h2>
+      <div className="song-container">
+        {songs.map(song => 
+          <Song key={song.id} song={song} />
+        )}
+      </div>
     </>
   );
 }

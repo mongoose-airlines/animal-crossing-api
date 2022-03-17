@@ -37,7 +37,7 @@
   }
 }
 
-.fossil, .villager {
+.fossil, .villager, .song {
   border: 3px solid black;
   width: 400px;
   display: flex;
@@ -45,7 +45,7 @@
   align-items: center;
 }
 
-.fossil-container, .villager-container {
+.fossil-container, .villager-container, .song-container {
   gap: 10px;
   display: flex;
   justify-content: center;
@@ -53,6 +53,6 @@
   flex-wrap: wrap;
 }
 
-.fossil > img, .villager > img {
+.fossil > img, .villager > img, .song > img {
   width: 75%;
 }
