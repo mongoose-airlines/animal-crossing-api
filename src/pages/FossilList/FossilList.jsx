@@ -13,7 +13,12 @@ useEffect(()=> {
   return (
     <>
       <h2>Fossil List Page</h2>
-      <Fossil />
+      
+      <div className="fossil-container">
+        {fossils.map(fossil =>
+          <Fossil key={fossil.image_uri} fossil={fossil} />
+        )}
+      </div>
     </>
   );
 }

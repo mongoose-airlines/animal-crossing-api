@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.fossil{
+  border: 3px solid black;
+  margin-bottom: 2px;
+  width: 400px;
+}
+
+.fossil-container {
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
