@@ -10,7 +10,13 @@ function getVillagers() {
   .then(res => res.json())
 }
 
+function getSongs() {
+  return fetch (`${baseUrl}/songs`)
+  .then(res => res.json())
+}
+
 export {
   getFossils,
-  getVillagers
+  getVillagers,
+  getSongs
 }
