@@ -1,24 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import FossilList from './pages/FossilList/FossilList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Sanity Check</h1>
+      <a href="/fossils">To the fossils!</a>
+      <Routes>
+        <Route path='/fossils' element={<FossilList />} />
+      </Routes>
+    </>
   );
 }
 
