@@ -23,6 +23,11 @@ const SongList = (props) => {
     setSearch({...search, [evt.target.name]: evt.target.value.toLowerCase()})
   }
 
+  const handlePickRandomSong = evt => {
+    setSearch({query: songs[Math.floor(Math.random() * songs.length)].name['name-USen'].toLowerCase()})
+  }
+
+
   return (
     <>
       <h2>Songs</h2>
@@ -32,6 +37,9 @@ const SongList = (props) => {
         value={search.query}
         onChange={handleSearch}
       />
+      <button onClick={handlePickRandomSong}>
+        Get Random
+      </button>
       {search.query ? 
         <>
           <div className="song-container">
