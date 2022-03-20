@@ -10,7 +10,6 @@ import SongDetails from './pages/SongDetails/SongDetails';
 function App() {
   return (
     <>
-      <h1>Sanity Check</h1>
       <a href="/fossils">To the fossils!</a><br/>
       <a href="/villagers">Villager List!</a><br />
       <a href="/songs">Dat music</a>
