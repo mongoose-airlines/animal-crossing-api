@@ -37,9 +37,17 @@
   }
 }
 
-.fossil, .villager, .song {
+.fossil, .villager, .song{
   border: 3px solid black;
   width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.song-details {
+  border: 3px solid black;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
