@@ -121,10 +121,20 @@ nav, .dropdown-menu, .dropdown-item, .nav-item, .nav-link, .navbar-brand{
   background-color: var(--color-two);
   color: var(--color-three);
   font-weight: bold;
+  font-size: small;
 }
 
-
+.navbar-toggler {
+  color: var(--color-two);
+  background-color: var(--color-one);
+  font-size: small;
+}
 
 .nav-link:focus, .nav-link:hover, .navbar-brand:hover {
   color: var(--color-four);
 }
+
+.form-control {
+  font-size: small;
+}
+
