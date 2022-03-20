@@ -13,9 +13,6 @@ function App() {
     <>
       <main className='App'>
         <NavBar />
-        <a href="/fossils">To the fossils!</a><br/>
-        <a href="/villagers">Villager List!</a><br />
-        <a href="/songs">Dat music</a>
         <Routes>
           <Route path='/fossils' element={<FossilList />} />
           <Route path='/villagers' element={<VillagerList />} />

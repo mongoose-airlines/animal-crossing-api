@@ -1,9 +1,10 @@
+
 const NavBar = (props) => {
   return (
     <>
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <nav className="navbar navbar-expand-sm">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">React AC</a>
+          <a className="navbar-brand" href="/">React AC</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -20,12 +21,13 @@ const NavBar = (props) => {
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Resource Lists
+                  Collections
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a className="dropdown-item" href="#">Fish</a></li>
-                  <li><a className="dropdown-item" href="#">Fossils</a></li>
-                  <li><a className="dropdown-item" href="#">XXXXXXX</a></li>
+                  <li><a className="dropdown-item" href="/fish-list">Fish</a></li>
+                  <li><a className="dropdown-item" href="/fossils">Fossils</a></li>
+                  <li><a className="dropdown-item" href="/villagers">Villagers</a></li>
+                  <li><a className="dropdown-item" href="/songs">Songs</a></li>
                 </ul>
               </li>
             </ul>
