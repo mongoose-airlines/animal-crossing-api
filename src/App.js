@@ -4,6 +4,7 @@ import FossilList from './pages/FossilList/FossilList';
 import VillagerList from './pages/VillagerList/VillagerList';
 import SongList from './pages/SongList/SongList';
 import FossilDetails from './pages/FossilDetails/FossilDetails';
+import VillagerDetails from './pages/VillagerDetails/VillagerDetails';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/villagers' element={<VillagerList />} />
         <Route path='/songs' element={<SongList />} />
         <Route path='/fossil' element={<FossilDetails />} />
+        <Route path='/villager' element={<VillagerDetails />} />
       </Routes>
     </>
   );

@@ -18,7 +18,7 @@ useEffect(()=> {
 }, [search])
 
 const handleSearch = evt => {
-  setSearch({...search, [evt.target.name]: evt.target.value})
+  setSearch({...search, [evt.target.name]: evt.target.value.toLowerCase()})
 }
 
   return (
