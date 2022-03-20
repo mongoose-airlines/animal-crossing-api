@@ -1,12 +1,18 @@
-const Fossil = (props) => {
+import { Link } from "react-router-dom";
+
+const Fossil = ({fossil}) => {
   return (
     <>
+    <Link
+      to='/fossil'
+      state={{fossil}}
+      className='card-link'
+    >
       <div className="fossil">
-        <img src={props.fossil.image_uri} alt="fossil" />
-        <h2>{props.fossil['file-name']}</h2>
-        <h3>Price: {props.fossil.price}🔔</h3>
-        <p>{props.fossil['museum-phrase']}</p>
+        <img src={fossil.image_uri} alt="fossil" />
+        <h2>{fossil.name['name-USen']}</h2>
       </div>
+    </Link>
     </>
   );
 }
