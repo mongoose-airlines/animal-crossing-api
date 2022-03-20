@@ -6,11 +6,13 @@ import SongList from './pages/SongList/SongList';
 import FossilDetails from './pages/FossilDetails/FossilDetails';
 import VillagerDetails from './pages/VillagerDetails/VillagerDetails';
 import SongDetails from './pages/SongDetails/SongDetails';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
     <>
       <main className='App'>
+        <NavBar />
         <a href="/fossils">To the fossils!</a><br/>
         <a href="/villagers">Villager List!</a><br />
         <a href="/songs">Dat music</a>
