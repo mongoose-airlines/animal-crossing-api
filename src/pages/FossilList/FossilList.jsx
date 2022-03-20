@@ -3,23 +3,27 @@ import { useState, useEffect } from "react";
 import { getFossils } from "../../services/api-calls";
 
 const FossilList = (props) => {
-const [fossils, setFossils] = useState([])
-const [search, setSearch] = useState({query: ''})
-const [searchResults, setSearchResults] = useState([])
+  const [fossils, setFossils] = useState([])
+  const [search, setSearch] = useState({query: ''})
+  const [searchResults, setSearchResults] = useState([])
 
-useEffect(()=> {
-  getFossils()
-  .then(fossilData => setFossils(fossilData))
-}, [])
+  useEffect(()=> {
+    getFossils()
+    .then(fossilData => setFossils(fossilData))
+  }, [])
 
-useEffect(()=> {
-  const results = fossils.filter(fossil => fossil['file-name'].includes(search.query))
-  setSearchResults(results)
-}, [search])
+  useEffect(()=> {
+    const results = fossils.filter(fossil => fossil['file-name'].includes(search.query))
+    setSearchResults(results)
+  }, [search])
 
-const handleSearch = evt => {
-  setSearch({...search, [evt.target.name]: evt.target.value.toLowerCase()})
-}
+  const handleSearch = evt => {
+    setSearch({...search, [evt.target.name]: evt.target.value.toLowerCase()})
+  }
+
+  const handlePickRandomFossil = evt => {
+    setSearch({query: fossils[Math.floor(Math.random() * fossils.length)]['file-name']})
+  }
 
   return (
     <>
@@ -30,6 +34,9 @@ const handleSearch = evt => {
         value={search.query}
         onChange={handleSearch}
       />
+      <button onClick={handlePickRandomFossil}>
+        Get Random
+      </button>
       {search.query ? 
       <>
         <div className="fossil-container">
