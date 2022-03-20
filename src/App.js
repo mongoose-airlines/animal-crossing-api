@@ -10,17 +10,20 @@ import SongDetails from './pages/SongDetails/SongDetails';
 function App() {
   return (
     <>
-      <a href="/fossils">To the fossils!</a><br/>
-      <a href="/villagers">Villager List!</a><br />
-      <a href="/songs">Dat music</a>
-      <Routes>
-        <Route path='/fossils' element={<FossilList />} />
-        <Route path='/villagers' element={<VillagerList />} />
-        <Route path='/songs' element={<SongList />} />
-        <Route path='/fossil' element={<FossilDetails />} />
-        <Route path='/villager' element={<VillagerDetails />} />
-        <Route path='/song' element={<SongDetails />} />
-      </Routes>
+      <main className='App'>
+        <a href="/fossils">To the fossils!</a><br/>
+        <a href="/villagers">Villager List!</a><br />
+        <a href="/songs">Dat music</a>
+        <Routes>
+          <Route path='/fossils' element={<FossilList />} />
+          <Route path='/villagers' element={<VillagerList />} />
+          <Route path='/songs' element={<SongList />} />
+          <Route path='/fossil' element={<FossilDetails />} />
+          <Route path='/villager' element={<VillagerDetails />} />
+          <Route path='/song' element={<SongDetails />} />
+        </Routes>
+
+      </main>
     </>
   );
 }
