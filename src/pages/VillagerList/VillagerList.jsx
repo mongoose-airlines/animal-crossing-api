@@ -1,16 +1,9 @@
 import { useState, useEffect } from 'react';
 import Villager from "../../components/Villager/Villager";
-import { getVillagers } from "../../services/api-calls";
 
-const VillagerList = (props) => {
-  const [villagers, setVillagers] = useState([])
+const VillagerList = ({villagers}) => {
   const [search, setSearch] = useState({query: ''})
   const [searchResults, setSearchResults] = useState([])
-
-  useEffect(()=> {
-    getVillagers()
-    .then(villagerData => setVillagers(villagerData))
-  }, [])
 
   useEffect(()=> {
     const results = villagers.filter(villager => villager.name['name-USen'].toLowerCase().includes(search.query))

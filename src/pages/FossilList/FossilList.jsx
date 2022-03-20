@@ -1,16 +1,9 @@
 import Fossil from "../../components/Fossil/Fossil";
 import { useState, useEffect } from "react";
-import { getFossils } from "../../services/api-calls";
 
-const FossilList = (props) => {
-  const [fossils, setFossils] = useState([])
+const FossilList = ({fossils}) => {
   const [search, setSearch] = useState({query: ''})
   const [searchResults, setSearchResults] = useState([])
-
-  useEffect(()=> {
-    getFossils()
-    .then(fossilData => setFossils(fossilData))
-  }, [])
 
   useEffect(()=> {
     const results = fossils.filter(fossil => fossil['file-name'].includes(search.query))

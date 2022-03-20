@@ -1,18 +1,9 @@
 import Song from "../../components/Song/Song";
 import { useState, useEffect } from 'react';
-import { getSongs } from "../../services/api-calls";
 
-const SongList = (props) => {
-  const [songs, setSongs] = useState([])
+const SongList = ({songs}) => {
   const [search, setSearch] = useState({query: ''})
   const [searchResults, setSearchResults] = useState([])
-
-
-  useEffect(() => {
-    getSongs()
-    .then(songData => setSongs(songData))
-  })
-
 
   useEffect(()=> {
     const results = songs.filter(song => song.name['name-USen'].toLowerCase().includes(search.query))
@@ -26,7 +17,6 @@ const SongList = (props) => {
   const handlePickRandomSong = evt => {
     setSearch({query: songs[Math.floor(Math.random() * songs.length)].name['name-USen'].toLowerCase()})
   }
-
 
   return (
     <>
