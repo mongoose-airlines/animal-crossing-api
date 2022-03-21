@@ -9,7 +9,7 @@ const Song = ({song}) => {
     >
       <div className="song">
         <img src={song.image_uri} alt="album" />
-        <h2>{song.name['name-USen']}</h2>
+        <h3>{song.name['name-USen']}</h3>
       </div>
     </Link>
   );

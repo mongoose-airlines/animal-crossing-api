@@ -10,7 +10,7 @@ const Fossil = ({fossil}) => {
     >
       <div className="fossil">
         <img src={fossil.image_uri} alt="fossil" />
-        <h2>{fossil.name['name-USen']}</h2>
+        <p>{fossil.name['name-USen']}</p>
       </div>
     </Link>
     </>
