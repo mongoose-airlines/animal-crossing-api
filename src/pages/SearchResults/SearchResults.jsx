@@ -44,7 +44,7 @@ const SearchResults = ({songs, villagers, fossils}) => {
         </>
         :
         <>
-          <h2>No Matching Fossils</h2>
+          <h2>No Matching Villagers</h2>
         </>
       }
     </>
