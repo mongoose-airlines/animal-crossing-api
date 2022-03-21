@@ -35,7 +35,7 @@ function App() {
 
   const handleSubmitSearch = evt => {
     setSearchResults({
-      fossils: fossils.filter(fossil => fossil['file-name'].includes(search.query)),
+      fossils: fossils.filter(fossil => fossil.name['name-USen'].includes(search.query)),
       songs: songs.filter(song => song.name['name-USen'].toLowerCase().includes(search.query)),
       villagers: villagers.filter(villager => villager.name['name-USen'].toLowerCase().includes(search.query))
     })
