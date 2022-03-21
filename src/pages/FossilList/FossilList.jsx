@@ -6,7 +6,7 @@ const FossilList = ({fossils}) => {
   const [searchResults, setSearchResults] = useState([])
 
   useEffect(()=> {
-    const results = fossils.filter(fossil => fossil['file-name'].includes(search.query))
+    const results = fossils.filter(fossil => fossil.name['name-USen'].includes(search.query))
     setSearchResults(results)
   }, [search])
 
