@@ -8,8 +8,8 @@ const Villager = ({ villager }) => {
         state={{villager}}
         className='card-link'
       >
-        <div style={{backgroundColor: villager['bubble-color'], color: villager['text-color']}} className="villager">
-          <img src={villager.image_uri} alt="villager" />
+        <div style={{backgroundColor: villager['text-color'], color: villager['bubble-color']}} className="villager">
+          <img src={villager.icon_uri} alt="villager" />
           <h3>
             {villager.name['name-USen']}</h3>
         </div>

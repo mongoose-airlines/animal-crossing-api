@@ -15,8 +15,50 @@ function getSongs() {
   .then(res => res.json())
 }
 
+function getFish() {
+  return fetch (`${baseUrl}/fish`)
+  .then(res => res.json())
+}
+
+function getArt() {
+  return fetch (`${baseUrl}/art`)
+  .then(res => res.json())
+}
+
+function getHousewares() {
+  return fetch (`${baseUrl}/houseware`)
+  .then(res => res.json())
+}
+
+function getWallMounted() {
+  return fetch (`${baseUrl}/wallmounted`)
+  .then(res => res.json())
+}
+
+function getMisc() {
+  return fetch (`${baseUrl}/misc`)
+  .then(res => res.json())
+}
+
+function getBugs() {
+  return fetch (`${baseUrl}/bugs`)
+  .then(res => res.json())
+}
+
+function getSea() {
+  return fetch (`${baseUrl}/sea`)
+  .then(res => res.json())
+}
+
 export {
   getFossils,
   getVillagers,
-  getSongs
+  getSongs,
+  getFish,
+  getArt,
+  getHousewares,
+  getWallMounted,
+  getMisc,
+  getBugs,
+  getSea
 }
