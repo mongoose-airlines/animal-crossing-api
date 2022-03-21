@@ -1,5 +1,13 @@
+import { useNavigate } from "react-router-dom";
 
 const NavBar = (props) => {
+  const navigate = useNavigate()
+
+  const handleSubmitSearch = evt => {
+    evt.preventDefault()
+    props.handleSubmitSearch()
+  }
+
   return (
     <>
       <nav className="container-fluid navbar navbar-expand-sm">
@@ -29,8 +37,8 @@ const NavBar = (props) => {
               </li>
             </ul>
           </div>
-          <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <form className="d-flex" onSubmit={handleSubmitSearch}>
+            <input className="form-control me-2" onChange={props.handleSetSearch} value={props.search.query} name="query" type="search" placeholder="Search" aria-label="Search" />
           </form>
         </div>
       </nav>
