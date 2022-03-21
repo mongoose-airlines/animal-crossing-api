@@ -27,7 +27,7 @@ const FossilList = ({fossils}) => {
         value={search.query}
         onChange={handleSearch}
       />
-      <button onClick={handlePickRandomFossil}>
+      <button className="btn btn-success" onClick={handlePickRandomFossil}>
         Get Random
       </button>
       {search.query ? 

@@ -27,7 +27,7 @@ const VillagerList = ({villagers}) => {
         value={search.query}
         onChange={handleSearch}
       />
-      <button onClick={handlePickRandomVillager}>
+      <button className="btn btn-success" onClick={handlePickRandomVillager}>
         Get Random
       </button>
       {search.query ? 

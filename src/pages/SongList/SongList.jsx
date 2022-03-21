@@ -27,7 +27,7 @@ const SongList = ({songs}) => {
         value={search.query}
         onChange={handleSearch}
       />
-      <button onClick={handlePickRandomSong}>
+      <button className="btn btn-success" onClick={handlePickRandomSong}>
         Get Random
       </button>
       {search.query ? 

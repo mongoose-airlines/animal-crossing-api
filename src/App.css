@@ -138,13 +138,13 @@ nav, .dropdown-menu, .dropdown-item, .nav-item, .nav-link, .navbar-brand{
   background-color: var(--color-two);
   color: var(--color-three);
   font-weight: bold;
-  font-size: medium;
+  font-size: large;
 }
 
 .navbar-toggler {
   color: var(--color-two);
   background-color: var(--color-one);
-  font-size: medium;
+  font-size: large;
 }
 
 .nav-link:focus, .nav-link:hover, .navbar-brand:hover {
@@ -152,6 +152,9 @@ nav, .dropdown-menu, .dropdown-item, .nav-item, .nav-link, .navbar-brand{
 }
 
 .form-control {
-  font-size: medium;
+  font-size: large;
 }
 
+.btn {
+  margin-left: 10px;
+}
