@@ -12,6 +12,7 @@ import SongDetails from './pages/SongDetails/SongDetails';
 import NavBar from './components/NavBar/NavBar';
 import SearchResults from './pages/SearchResults/SearchResults';
 import FishList from './pages/FishList/FishList';
+import FishDetails from './pages/FishDetails/FishDetails';
 
 function App() {
   const navigate = useNavigate()
@@ -85,6 +86,7 @@ function App() {
           <Route path='/song' element={<SongDetails />} />
           <Route path='/search' element={<SearchResults villagers={searchResults.villagers} songs={searchResults.songs} fossils={searchResults.fossils} fishes={searchResults.fishes}/>} />
           <Route path='/fishes' element={<FishList fishes={fishes} />} />
+          <Route path='/fish' element={<FishDetails />} />
         </Routes>
 
       </main>
