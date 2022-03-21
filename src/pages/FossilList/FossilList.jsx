@@ -15,7 +15,7 @@ const FossilList = ({fossils}) => {
   }
 
   const handlePickRandomFossil = evt => {
-    setSearch({query: fossils[Math.floor(Math.random() * fossils.length)]['file-name']})
+    setSearch({query: fossils[Math.floor(Math.random() * fossils.length)].name['name-USen']})
   }
 
   return (

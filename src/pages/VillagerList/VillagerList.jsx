@@ -14,6 +14,10 @@ const VillagerList = ({villagers}) => {
     setSearch({...search, [evt.target.name]: evt.target.value.toLowerCase()})
   }
 
+  const handlePickRandomVillager = evt => {
+    setSearch({query: villagers[Math.floor(Math.random() * villagers.length)].name['name-USen'].toLowerCase()})
+  }
+
   return (
     <>
       <h2>Villager List</h2>
@@ -23,6 +27,9 @@ const VillagerList = ({villagers}) => {
         value={search.query}
         onChange={handleSearch}
       />
+      <button onClick={handlePickRandomVillager}>
+        Get Random
+      </button>
       {search.query ? 
       <>
         <div className='villager-container'>
