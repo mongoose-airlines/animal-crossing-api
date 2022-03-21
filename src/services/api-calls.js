@@ -30,7 +30,7 @@ function getHousewares() {
   .then(res => res.json())
 }
 
-function getWallMounted() {
+function getWallmounted() {
   return fetch (`${baseUrl}/wallmounted`)
   .then(res => res.json())
 }
@@ -57,7 +57,7 @@ export {
   getFish,
   getArt,
   getHousewares,
-  getWallMounted,
+  getWallmounted,
   getMisc,
   getBugs,
   getSea

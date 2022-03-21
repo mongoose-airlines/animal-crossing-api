@@ -29,7 +29,7 @@ const NavBar = (props) => {
                   Collections
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  {/* <li><a className="dropdown-item" href="/fish-list">Fish</a></li> */}
+                  <li><a className="dropdown-item" href="/fishes">Fish</a></li>
                   <li><a className="dropdown-item" href="/fossils">Fossils</a></li>
                   <li><a className="dropdown-item" href="/villagers">Villagers</a></li>
                   <li><a className="dropdown-item" href="/songs">Songs</a></li>

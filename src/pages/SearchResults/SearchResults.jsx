@@ -1,24 +1,11 @@
 import Song from "../../components/Song/Song";
 import Villager from "../../components/Villager/Villager";
 import Fossil from "../../components/Fossil/Fossil";
+import Fish from "../../components/Fish/Fish";
 
-const SearchResults = ({songs, villagers, fossils}) => {
+const SearchResults = ({songs, villagers, fossils, fishes}) => {
   return (
     <>
-      {songs.length ?
-        <>
-          <h2>Matching Songs ({songs.length}):</h2>
-          <div className="song-container">
-            {songs.map(song => 
-              <Song key={song.id} song={song} />
-            )}
-          </div>
-        </>
-        :
-        <>
-          <h2>No Matching Songs</h2>
-        </>
-      }
       {fossils.length ?
         <>
           <h2>Matching Fossils ({fossils.length}):</h2>
@@ -45,6 +32,34 @@ const SearchResults = ({songs, villagers, fossils}) => {
         :
         <>
           <h2>No Matching Villagers</h2>
+        </>
+      }
+      {songs.length ?
+        <>
+          <h2>Matching Songs ({songs.length}):</h2>
+          <div className="song-container">
+            {songs.map(song => 
+              <Song key={song.id} song={song} />
+            )}
+          </div>
+        </>
+        :
+        <>
+          <h2>No Matching Songs</h2>
+        </>
+      }
+      {fishes.length ?
+        <>
+          <h2>Matching Fish ({fishes.length}):</h2>
+          <div className="song-container">
+            {fishes.map(fish => 
+              <Fish key={fish.id} fish={fish} />
+            )}
+          </div>
+        </>
+        :
+        <>
+          <h2>No Matching Fish</h2>
         </>
       }
     </>

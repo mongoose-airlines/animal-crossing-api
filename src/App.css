@@ -94,7 +94,7 @@
   border-radius: 5%;
 }
 
-.fossil {
+.fossil, .fish {
   border: 3px solid black;
   width: 145px;
   display: flex;
@@ -104,7 +104,7 @@
   border-radius: 5%;
 }
 
-.fossil, .song {
+.fossil, .song, .fish {
   background-color: var(--color-two);
 }
 
@@ -116,7 +116,7 @@
   align-items: center;
 }
 
-.fossil-container, .villager-container, .song-container {
+.fish-container, .fossil-container, .villager-container, .song-container {
   gap: 10px;
   display: flex;
   justify-content: center;
@@ -124,7 +124,7 @@
   flex-wrap: wrap;
 }
 
-.fossil > img, .villager > img, .song > img {
+.fish > img, .fossil > img, .villager > img, .song > img {
   width: 75%;
 }
 
