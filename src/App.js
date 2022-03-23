@@ -63,7 +63,7 @@ function App() {
   const handleLogout = () => {
     authService.logout()
     setUser(null)
-    navigate('/')
+    navigate('/login')
   }
 
   const handleSignupOrLogin = () => {
@@ -87,7 +87,7 @@ function App() {
   return (
     <>
       <main className='App'>
-        <NavBar search={search} handleSubmitSearch={handleSubmitSearch} handleSetSearch={handleSetSearch} />
+        <NavBar handleLogout={handleLogout} user={user} search={search} handleSubmitSearch={handleSubmitSearch} handleSetSearch={handleSetSearch} />
         <Routes>
           <Route path='/fossils' element={<FossilList fossils={fossils} />} />
           <Route path='/villagers' element={<VillagerList villagers={villagers} />} />
@@ -99,12 +99,12 @@ function App() {
           <Route path='/fishes' element={<FishList fishes={fishes} />} />
           <Route path='/fish' element={<FishDetails />} />
           <Route
-            path="/signup"
-            element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
-          />
-          <Route
             path="/login"
             element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+          />
+          <Route
+            path="/signup"
+            element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
           />
           <Route
             path="/changePassword"

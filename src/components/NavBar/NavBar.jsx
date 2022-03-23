@@ -1,7 +1,5 @@
-import { useNavigate } from "react-router-dom";
 
 const NavBar = (props) => {
-  const navigate = useNavigate()
 
   const handleSubmitSearch = evt => {
     evt.preventDefault()
@@ -12,7 +10,18 @@ const NavBar = (props) => {
     <>
       <nav className="container-fluid navbar navbar-expand-sm">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">React AC</a>
+        {props.user ?
+            <>
+              <a className="nav-link" onClick={props.handleLogout} href="#">Log Out</a>
+              <a className="nav-link" href="/changePassword">Change Password</a>
+            </>
+            :
+            <>
+              <a className="nav-link" href="/signup">Sign Up</a>
+              <a className="nav-link" href="/login">Log In</a>
+            </>
+          }
+          <a className="navbar-brand" href="/">{props.user?.name}</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon">...</span>
           </button>
@@ -39,7 +48,7 @@ const NavBar = (props) => {
           </div>
           <form className="d-flex" onSubmit={handleSubmitSearch}>
             <input className="form-control me-2" onChange={props.handleSetSearch} value={props.search.query} name="query" type="search" placeholder="Search" aria-label="Search" />
-          </form>
+          </form>    
         </div>
       </nav>
     </>
