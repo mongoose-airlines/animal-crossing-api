@@ -19,17 +19,17 @@ function App() {
   const [villagers, setVillagers] = useState([])
   const [fossils, setFossils] = useState([])
   const [songs, setSongs] = useState([])
-  const [bugs, setBugs] = useState([])
-  const [artItems, setArtItems] = useState([])
-  const [miscItems, setMiscItems] = useState([])
   const [fishes, setFishes] = useState([])
-  const [wallmountedItems, setWallmountedItems] = useState([])
-  const [housewares, setHousewares] = useState([])
-  const [seaItems, setSeaItems] = useState([])
+  // const [bugs, setBugs] = useState([])
+  // const [artItems, setArtItems] = useState([])
+  // const [miscItems, setMiscItems] = useState([])
+  // const [wallmountedItems, setWallmountedItems] = useState([])
+  // const [housewares, setHousewares] = useState([])
+  // const [seaItems, setSeaItems] = useState([])
 
 
   const [search, setSearch] = useState({query: ''})
-  const [searchResults, setSearchResults] = useState({villagers: [], songs: [], fossils: []})
+  const [searchResults, setSearchResults] = useState({villagers: [], songs: [], fossils: [], fishes: []})
 
 
   useEffect(() => {
