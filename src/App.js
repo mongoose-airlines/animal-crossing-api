@@ -1,8 +1,9 @@
 import './App.css';
 import './fonts/font.css'
 import { useEffect, useState } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, useNavigate, NavLink, Navigate } from 'react-router-dom'
 import * as apiCalls from './services/api-calls'
+import * as authService from './services/authService'
 import FossilList from './pages/FossilList/FossilList';
 import VillagerList from './pages/VillagerList/VillagerList';
 import SongList from './pages/SongList/SongList';
@@ -13,8 +14,12 @@ import NavBar from './components/NavBar/NavBar';
 import SearchResults from './pages/SearchResults/SearchResults';
 import FishList from './pages/FishList/FishList';
 import FishDetails from './pages/FishDetails/FishDetails';
+import Signup from './pages/Signup/Signup'
+import Login from './pages/Login/Login'
+import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 function App() {
+  const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [villagers, setVillagers] = useState([])
   const [fossils, setFossils] = useState([])
@@ -55,9 +60,15 @@ function App() {
     // .then(seaData => setSeaItems(seaData))
   }, [])
 
-  useEffect(()=> {
-    
-  }, [search])
+  const handleLogout = () => {
+    authService.logout()
+    setUser(null)
+    navigate('/')
+  }
+
+  const handleSignupOrLogin = () => {
+    setUser(authService.getUser())
+  }
 
   const handleSubmitSearch = evt => {
     setSearchResults({
@@ -87,6 +98,18 @@ function App() {
           <Route path='/search' element={<SearchResults villagers={searchResults.villagers} songs={searchResults.songs} fossils={searchResults.fossils} fishes={searchResults.fishes}/>} />
           <Route path='/fishes' element={<FishList fishes={fishes} />} />
           <Route path='/fish' element={<FishDetails />} />
+          <Route
+            path="/signup"
+            element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+          />
+          <Route
+            path="/login"
+            element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+          />
+          <Route
+            path="/changePassword"
+            element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
+          />
         </Routes>
 
       </main>
