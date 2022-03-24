@@ -3,7 +3,7 @@ import Villager from "../../components/Villager/Villager";
 import Fossil from "../../components/Fossil/Fossil";
 import Fish from "../../components/Fish/Fish";
 
-const SearchResults = ({songs, villagers, fossils, fishes}) => {
+const SearchResults = ({songs, villagers, fossils, fishes, handleAddVillager}) => {
   return (
     <>
       {fossils.length ?
@@ -25,7 +25,7 @@ const SearchResults = ({songs, villagers, fossils, fishes}) => {
           <h2>Matching Villagers ({villagers.length}):</h2>
           <div className='villager-container'>
             {villagers.map(villager =>
-              <Villager key={villager.id} villager={villager}/>  
+              <Villager handleAddVillager={handleAddVillager} key={villager.id} villager={villager}/>  
               )}
           </div>
         </>

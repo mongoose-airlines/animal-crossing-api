@@ -94,18 +94,38 @@ function App() {
     setSearch({...search, [evt.target.name]: evt.target.value})
   }
 
+  const handleAddVillager = villager => {
+    profileService.addVillager(villager)
+    .then(updatedProfile => {
+      setProfile(updatedProfile)
+    })
+  }
+
   return (
     <>
       <main className='App'>
         <NavBar handleLogout={handleLogout} user={user} search={search} handleSubmitSearch={handleSubmitSearch} handleSetSearch={handleSetSearch} />
         <Routes>
           <Route path='/fossils' element={<FossilList fossils={fossils} />} />
-          <Route path='/villagers' element={<VillagerList villagers={villagers} />} />
+          <Route path='/villagers' element={
+            <VillagerList 
+              villagers={villagers} 
+              handleAddVillager={handleAddVillager}
+            />} 
+          />
           <Route path='/songs' element={<SongList songs={songs} />} />
           <Route path='/fossil' element={<FossilDetails />} />
           <Route path='/villager' element={<VillagerDetails />} />
           <Route path='/song' element={<SongDetails />} />
-          <Route path='/search' element={<SearchResults villagers={searchResults.villagers} songs={searchResults.songs} fossils={searchResults.fossils} fishes={searchResults.fishes}/>} />
+          <Route path='/search' element={
+            <SearchResults 
+              handleAddVillager={handleAddVillager} 
+              villagers={searchResults.villagers} 
+              songs={searchResults.songs} 
+              fossils={searchResults.fossils} 
+              fishes={searchResults.fishes}
+            />} 
+          />
           <Route path='/fishes' element={<FishList fishes={fishes} />} />
           <Route path='/fish' element={<FishDetails />} />
           <Route
