@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom"
 const NavBar = (props) => {
 
   const handleSubmitSearch = evt => {
@@ -12,36 +12,36 @@ const NavBar = (props) => {
         <div className="container-fluid">
         {props.user ?
             <>
-              <a className="nav-link" onClick={props.handleLogout} href="#">Log Out</a>
-              <a className="nav-link" href="/changePassword">Change Password</a>
+              <NavLink className="nav-link" onClick={props.handleLogout} to="#">Log Out</NavLink>
+              <NavLink className="nav-link" to="/changePassword">Change Password</NavLink>
             </>
             :
             <>
-              <a className="nav-link" href="/signup">Sign Up</a>
-              <a className="nav-link" href="/login">Log In</a>
+              <NavLink className="nav-link" to="/signup">Sign Up</NavLink>
+              <NavLink className="nav-link" to="/login">Log In</NavLink>
             </>
           }
-          <a className="navbar-brand" href="/">{props.user?.name}</a>
+          <NavLink className="navbar-brand" to="/">{props.user?.name}</NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon">...</span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#">My Stuff</a>
+                <NavLink className="nav-link" to="#">My Stuff</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">?????</a>
+                <NavLink className="nav-link" to="#">?????</NavLink>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <NavLink className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Collections
-                </a>
+                </NavLink>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a className="dropdown-item" href="/fishes">Fish</a></li>
-                  <li><a className="dropdown-item" href="/fossils">Fossils</a></li>
-                  <li><a className="dropdown-item" href="/villagers">Villagers</a></li>
-                  <li><a className="dropdown-item" href="/songs">Songs</a></li>
+                  <li><NavLink className="dropdown-item" to="/fishes">Fish</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/fossils">Fossils</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/villagers">Villagers</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/songs">Songs</NavLink></li>
                 </ul>
               </li>
             </ul>
