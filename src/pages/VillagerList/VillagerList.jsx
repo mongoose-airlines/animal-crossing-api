@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Villager from "../../components/Villager/Villager";
 
-const VillagerList = ({villagers, handleAddVillager}) => {
+const VillagerList = ({villagers, handleRemoveVillager, handleAddVillager, profile}) => {
   const [search, setSearch] = useState({query: ''})
   const [searchResults, setSearchResults] = useState([])
 
@@ -34,7 +34,7 @@ const VillagerList = ({villagers, handleAddVillager}) => {
       <>
         <div className='villager-container'>
           {searchResults.map(villager =>
-            <Villager handleAddVillager={handleAddVillager} key={villager.id} villager={villager}/>  
+            <Villager handleRemoveVillager={handleRemoveVillager} profile={profile} handleAddVillager={handleAddVillager} key={villager.id} villager={villager}/>  
           )}
         </div>
       </>
@@ -42,7 +42,7 @@ const VillagerList = ({villagers, handleAddVillager}) => {
       <>
         <div className='villager-container'>
           {villagers.map(villager =>
-            <Villager handleAddVillager={handleAddVillager} key={villager.id} villager={villager}/>  
+            <Villager handleRemoveVillager={handleRemoveVillager} profile={profile} handleAddVillager={handleAddVillager} key={villager.id} villager={villager}/>  
           )}
         </div>
       </>

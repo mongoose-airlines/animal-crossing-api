@@ -28,8 +28,20 @@ function addVillager(villager) {
   .then(res => res.json())
 }
 
+function removeVillager(villagerName) {
+  return fetch(`${BASE_URL}/${villagerName}`, {
+    method: "PATCH",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    }
+  })
+  .then(res => res.json())
+}
+
+
 export { 
   getAllProfiles,
   getProfile,
-  addVillager
+  addVillager,
+  removeVillager
 }

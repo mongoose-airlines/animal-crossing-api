@@ -101,6 +101,13 @@ function App() {
     })
   }
 
+  const handleRemoveVillager = id => {
+    profileService.removeVillager(id)
+    .then(updatedProfile => {
+      setProfile(updatedProfile)
+    })
+  }
+
   return (
     <>
       <main className='App'>
@@ -111,6 +118,8 @@ function App() {
             <VillagerList 
               villagers={villagers} 
               handleAddVillager={handleAddVillager}
+              handleRemoveVillager={handleRemoveVillager}
+              profile={profile}
             />} 
           />
           <Route path='/songs' element={<SongList songs={songs} />} />
@@ -119,7 +128,9 @@ function App() {
           <Route path='/song' element={<SongDetails />} />
           <Route path='/search' element={
             <SearchResults 
-              handleAddVillager={handleAddVillager} 
+              handleAddVillager={handleAddVillager}
+              handleRemoveVillager={handleRemoveVillager}
+              profile={profile} 
               villagers={searchResults.villagers} 
               songs={searchResults.songs} 
               fossils={searchResults.fossils} 
