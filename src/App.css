@@ -140,7 +140,7 @@ nav, .dropdown-menu, .dropdown-item, .nav-item, .nav-link, .navbar-brand{
   background-color: var(--color-two);
   color: var(--color-three);
   font-weight: bold;
-  font-size: large;
+  font-size: x-large;
 }
 
 .navbar-toggler {

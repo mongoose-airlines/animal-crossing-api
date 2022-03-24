@@ -18,6 +18,7 @@ import FishDetails from './pages/FishDetails/FishDetails';
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Collection from './pages/Collection/Collection';
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -150,6 +151,10 @@ function App() {
           <Route
             path="/changePassword"
             element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
+          />
+          <Route 
+            path='/profile'
+            element={<Collection handleAddVillager={handleAddVillager} handleRemoveVillager={handleRemoveVillager} profile={profile} />}
           />
         </Routes>
 
