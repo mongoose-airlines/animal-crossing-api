@@ -28,4 +28,8 @@ function addVillager(villager) {
   .then(res => res.json())
 }
 
-export { getAllProfiles }
+export { 
+  getAllProfiles,
+  getProfile,
+  addVillager
+}

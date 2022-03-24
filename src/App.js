@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Route, Routes, useNavigate, NavLink, Navigate } from 'react-router-dom'
 import * as apiCalls from './services/api-calls'
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 import FossilList from './pages/FossilList/FossilList';
 import VillagerList from './pages/VillagerList/VillagerList';
 import SongList from './pages/SongList/SongList';
@@ -20,6 +21,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState({})
   const navigate = useNavigate()
   const [villagers, setVillagers] = useState([])
   const [fossils, setFossils] = useState([])
@@ -36,6 +38,14 @@ function App() {
   const [search, setSearch] = useState({query: ''})
   const [searchResults, setSearchResults] = useState({villagers: [], songs: [], fossils: [], fishes: []})
 
+  useEffect(() => {
+    if (user) {
+      profileService.getProfile(user.profile)
+      .then(profileData => {
+        setProfile(profileData)
+      })
+    }
+  }, [user])
 
   useEffect(() => {
     apiCalls.getFossils()
